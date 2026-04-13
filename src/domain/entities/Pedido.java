@@ -1,6 +1,7 @@
 package domain.entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Pedido {
@@ -25,8 +26,33 @@ public class Pedido {
       if (produto == null){
           throw new IllegalArgumentException("Produto é obrigatório");
       }
+      if (!produto.temEstoque()){
+          throw new IllegalStateException("Produto zerado");
+      }
+      produtos.add(produto);
+      total += produto.getValor();
+      produto.baixaEstoque();
 
   }
 
+  public void fecharPedido(){
+      if (produtos.isEmpty()){
+          throw new IllegalStateException("Adicione ao menos um produto");
+      }
+      if (total > 500){
+          total *= 0.9;
+      }
+      statuspedido = "Fechado";
+  }
+
+  public int getNumeropedido(){ return numeropedido; }
+
+  public Cliente getCliente(){ return cliente;}
+
+  public List<Produto> getProdutos(){ return Collections.unmodifiableList(produtos); }
+
+  public String getStatuspedido(){ return statuspedido;}
+
+  public double getTotal(){ return total; }
 
 }
