@@ -21,6 +21,12 @@ public class Pedido {
       this.statuspedido = "Aberto";
       this.total = 0.0;
   }
+  public void addProduto(Produto produto){
+      if (produto == null){
+          throw new IllegalArgumentException("Produto é obrigatório");
+      }
+
+  }
 
 
 }
