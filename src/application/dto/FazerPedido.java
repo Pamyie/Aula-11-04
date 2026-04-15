@@ -1,4 +1,4 @@
-package sistemapedido;
+package application.dto;
 
 import java.util.List;
 
