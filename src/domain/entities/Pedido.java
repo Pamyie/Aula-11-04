@@ -45,6 +45,13 @@ public class Pedido {
       statuspedido = "Fechado";
   }
 
+  public void cancelar(){
+      if (statuspedido.equals("Cancelado")){
+          throw new IllegalArgumentException("Pedido já cancelado");
+      }
+      statuspedido = "Cancelado";
+  }
+
   public int getNumeropedido(){ return numeropedido; }
 
   public Cliente getCliente(){ return cliente;}

@@ -15,6 +15,7 @@ public class Produto {
         if (estoque < 0){
             throw new IllegalArgumentException("Estoque do produto não pode ser negativo.");
         }
+
         this.nomeproduto = nome;
         this.valor = valor;
         this.estoque = estoque;

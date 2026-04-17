@@ -41,13 +41,7 @@ public class FazerPedidoUseCase {
         if (request == null){
             throw new IllegalArgumentException("Requisição não pode ser nula.");
         }
-        if (request.getNomesProdutos() == null || request.getNomesProdutos().isEmpty()){
-            throw new IllegalArgumentException("Informe ao menos um produto.");
-        }
-        if (request.getNomesProdutos().size() != request.getPrecosProdutos().size()
-        || request.getNomesProdutos().size() != request.getEstoquesProdutos().size()){
-            throw new IllegalArgumentException("Dados de produtos inconsistentes.");
-        }
+
     }
 
 }

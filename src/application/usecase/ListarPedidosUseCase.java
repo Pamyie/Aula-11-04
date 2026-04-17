@@ -5,11 +5,11 @@ import domain.repositories.Repositorypedido;
 
 import java.util.List;
 
-public class ListarPedidosUC {
+public class ListarPedidosUseCase {
 
     private Repositorypedido repositoryPedido;
 
-    public ListarPedidosUC(Repositorypedido repositoryPedido){
+    public ListarPedidosUseCase(Repositorypedido repositoryPedido){
         this.repositoryPedido = repositoryPedido;
     }
 

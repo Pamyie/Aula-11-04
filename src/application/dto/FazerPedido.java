@@ -9,13 +9,19 @@ public class FazerPedido {
     private List<Double> precosProdutos;
     private List<Integer> estoquesProdutos;
 
-    public FazerPedido(String nomeCliente, String cpfCliente, List<String> nomesProdutos,
-                       List<Double> precosProdutos, List<Integer> estoquesProdutos) {
+    public FazerPedido(String nomeCliente, String cpfCliente, List<String> nomes,
+                       List<Double> precos, List<Integer> estoques) {
+        if(nomes == null || nomes.isEmpty())
+           throw new IllegalArgumentException("Informe um produto.");
+
+        if (nomes.size() != precos.size() || nomes.size() != estoques.size())
+            throw new IllegalArgumentException("Dados estão inconsistentes.");
+
         this.nomeCliente = nomeCliente;
         this.cpfCliente = cpfCliente;
-        this.nomesProdutos = nomesProdutos;
-        this.precosProdutos = precosProdutos;
-        this.estoquesProdutos = estoquesProdutos;
+        this.nomesProdutos = nomes;
+        this.precosProdutos = precos;
+        this.estoquesProdutos = estoques;
     }
 
     public String getNomeCliente() { return nomeCliente; }
